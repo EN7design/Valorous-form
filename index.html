@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d’adhésion</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="Header">
+        <img src="Logo.svg" alt="Logo Valorous">
+        <p class="Title">Nous sommes heureux de vous voir ici !</p>
+        <p class="STitle">Veuillez bien répondre à toutes les questions.</p>
+    </div>
+    <!-- le modale -->
+    <div id="customModal" class="modal">
+        <div class="modal-content">
+            <h2>Formulaire soumis avec succès !</h2>
+            <p>Merci pour votre soumission. Vous serez redirigé sous peu.</p>
+            <button id="closeModal" class="btn">OK</button>
+        </div>
+    </div>
+    <!-- Le formulaire -->
+    <div class="container">
+        <form id="questionnaireForm" method="POST" >
+            <!-- Progress bar -->
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <div class="progress-step active" data-step="1">1</div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-step" data-step="3">3</div>
+                <div class="progress-step" data-step="4">4</div>
+                <div class="progress-step" data-step="5">5</div>
+            </div>
+
+            <!-- Step 1: Informations personnelles -->
+            <div class="form-step active" data-step="1">
+                <h2>Informations personnelles</h2>
+                <div class="form-group">
+                    <label for="nom">Nom complet :</label>
+                    <input type="text" id="nom" name="nom" required>
+                    <div id="error-nom" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date de naissance :</label>
+                    <input type="date" id="date" name="date" required>
+                    <div id="error-date" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone :</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
+                    <div id="error-phone" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse</label>
+                    <textarea id="adresse" name="adresse" rows="2" required></textarea>
+                    <div id="error-adresse" class="error-message"></div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-next" id="nextButton">Suivant</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Intérêt pour le mentorat -->
+            <div class="form-step" data-step="2">
+                <h2>Intérêt pour le mentorat</h2>
+                <div class="form-group">
+                    <label>Êtes-vous intéressé à :</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="interet" value="Devenir un mentor">Devenir un mentor</label>
+                        <label><input type="radio" name="interet" value="Être mentoré">Être mentoré</label>
+                        <label><input type="radio" name="interet" value="Les deux">Les deux</label>
+                    </div>
+                    <div id="error-interet" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label>Si vous souhaitez être mentoré, quel type de mentor cherchez-vous ?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="type-mentor" value="Spirituel">Spirituel</label>
+                        <label><input type="radio" name="type-mentor" value="Professionnel">Professionnel</label>
+                        <label><input type="radio" name="type-mentor" value="Personnel">Personnel</label>
+                        <label>
+                            <input type="radio" name="type-mentor" value="autre">Autre
+                            <input type="text" class="other-input" id="type-mentor-autre">
+                        </label>
+                    </div>
+                    <div id="error-type-mentor" class="error-message"></div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-prev">Précédent</button>
+                    <button type="button" class="btn btn-next">Suivant</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Qualités et relations -->
+            <div class="form-step" data-step="3">
+                <h2>Qualités et relations dans le mentorat</h2>
+                <div class="form-group">
+                    <label for="qualites">Quelles qualités pensez-vous qu'un bon mentor doit avoir ?</label>
+                    <textarea id="qualites" name="qualites" rows="2" required></textarea>
+                    <div id="error-qualites" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label>Pour vous, qu'est-ce qui est le plus important dans une relation mentor-mentoré ?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="relation" value="L'écoute"> L'écoute</label>
+                        <label><input type="radio" name="relation" value="La confiance"> La confiance</label>
+                        <label><input type="radio" name="relation" value="L'engagement"> L'engagement</label>
+                        <label><input type="radio" name="relation" value="La motivation"> La motivation</label>
+                        <label>
+                            <input type="radio" name="relation" value="Autre"> Autre
+                            <input type="text" class="other-input" id="relation-autre">
+                        </label>
+                        <div id="error-relation" class="error-message"></div>
+                    </div>
+
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-prev">Précédent</button>
+                    <button type="button" class="btn btn-next">Suivant</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Disponibilité et activités -->
+            <div class="form-step" data-step="4">
+                <h2>Disponibilité et activités</h2>
+                <div class="form-group">
+                    <label>À quelle fréquence seriez-vous disponible ?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="frequence" value="Hebdomadairement"> Hebdomadairement</label>
+                        <label><input type="radio" name="frequence" value="Bihebdomadairement">
+                            Bihebdomadairement</label>
+                        <label><input type="radio" name="frequence" value="Mensuellement"> Mensuellement</label>
+                        <label>
+                            <input type="radio" name="frequence" value="Autre"> Autre
+                            <input type="text" class="other-input" id="frequence-autre">
+                        </label>
+                    </div>
+                    <div id="error-frequence" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label>Parmi les activités suivantes, lesquelles vous intéressent le plus ?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="activites" value="Débats"> Débats</label>
+                        <label><input type="radio" name="activites" value="Ateliers pratiques"> Ateliers
+                            pratiques</label>
+                        <label><input type="radio" name="activites" value="Activités sportives"> Activités
+                            sportives</label>
+                        <label><input type="radio" name="activites" value="Études bibliques"> Études bibliques</label>
+                        <label>
+                            <input type="radio" name="activites" value="Autre"> Autre
+                            <input type="text" class="other-input" id="activites-autre">
+                        </label>
+                    </div>
+                    <div id="error-activites" class="error-message"></div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-prev">Précédent</button>
+                    <button type="button" class="btn btn-next">Suivant</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Questions personnelles -->
+            <div class="form-step" data-step="5">
+                <h2>Questions personnelles et aspirations</h2>
+                <div class="form-group">
+                    <label for="mentor-inspirant">Citez un mentor influent qui vous inspire :</label>
+                    <textarea id="mentor-inspirant" name="mentor-inspirant" rows="3" required></textarea>
+                    <div id="error-mentor-inspirant" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="peur">Quelle est votre plus grande peur ?</label>
+                    <textarea id="peur" name="peur" rows="2" required></textarea>
+                    <div id="error-peur" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label>Êtes-vous plutôt entrepreneur ou employé ?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="profession" value="Entrepreneur"> Entrepreneur</label>
+                        <label><input type="radio" name="profession" value="Employé"> Employé</label>
+                    </div>
+                    <div id="error-profession" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label>Choisissez un cadre de travail :</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="cadre" value="Dans les bureaux au dernier étage d'un building">
+                            Dans les bureaux au dernier étage d'un building</label>
+                        <label><input type="radio" name="cadre" value="En nature à l'extérieur"> En nature à
+                            l'extérieur</label>
+                        <label><input type="radio" name="cadre" value="Dans l'avion lors d'un déplacement"> Dans l'avion
+                            lors d'un déplacement</label>
+                        <label><input type="radio" name="cadre" value="À la maison dans son bureau"> À la maison dans
+                            son bureau</label>
+                        <label><input type="radio" name="cadre" value="Au restaurant"> Au restaurant</label>
+                    </div>
+                    <div id="error-cadre" class="error-message"></div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-prev">Précédent</button>
+                    <button type="submit" class="btn btn-submit">Soumettre</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    <script src="main.js"></script>
+    <script src="alert.js"></script>
+</body>
+
+</html>
