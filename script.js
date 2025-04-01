@@ -1,7 +1,7 @@
 document.getElementById('questionnaireForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    fetch('http://localhost:3000/submit', {
+    fetch('https://valorous-adhesion.vercel.app/api/submit', { // URL mise à jour
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -108,9 +108,10 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
         if (!response.ok) {
             console.error('Erreur lors de la soumission du formulaire');
         }
+        return response.json(); // Ajout pour traiter la réponse JSON
     })
-    .then(data => console.log(data))
-    .catch(err => console.error(err)); 
+    .then(data => console.log('Réponse du serveur :', data)) // Affiche la réponse du serveur
+    .catch(err => console.error('Erreur réseau ou serveur :', err)); 
 });
 
 // Fermer le modal en cliquant sur le bouton "OK"
