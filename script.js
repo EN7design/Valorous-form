@@ -92,6 +92,15 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                                 document.getElementById('activites-autre').value
                     }
                 },
+                "SujetsThemes": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": document.querySelector('textarea[name="SujetsThemes"]').value
+                            }
+                        }
+                    ]
+                },
                 "Mentor inspirant": {
                     "rich_text": [
                         {
