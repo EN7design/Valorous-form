@@ -101,6 +101,11 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                         }
                     ]
                 },
+                "PartageExpeDefis": {
+                    "select": {
+                        "name": document.querySelector('input[name="PartageExpeDefis"]:checked')?.value
+                    }
+                },
                 "Mentor inspirant": {
                     "rich_text": [
                         {
