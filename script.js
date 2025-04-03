@@ -156,7 +156,16 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                     "select": {
                         "name": document.querySelector('input[name="cadre"]:checked').value
                     }
-                }
+                },
+                "Projection": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": document.querySelector('textarea[name="Projection"]').value
+                            }
+                        }
+                    ]
+                },
             }
         })
     })
