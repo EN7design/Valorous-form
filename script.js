@@ -51,6 +51,15 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                         "name": document.querySelector('input[name="EuMentor"]:checked')?.value
                     }
                 },
+                "Leçon": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": document.querySelector('textarea[name="Leçon"]').value
+                            }
+                        }
+                    ]
+                },
                 "Qualités": {
                     "rich_text": [
                         {
