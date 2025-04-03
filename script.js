@@ -101,6 +101,11 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                         }
                     ]
                 },
+                "NiveauEngagement": {
+                    "select": {
+                        "name": document.querySelector('input[name="NiveauEngagement"]:checked').value
+                    }
+                },
                 "Plus grande peur": {
                     "rich_text": [
                         {
