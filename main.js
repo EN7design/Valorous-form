@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Redirige après 3 secondes
             setTimeout(() => {
                 window.location.href = 'confirmation.html';
-            }, 2000);
+            }, 5000);
         }
     });
 

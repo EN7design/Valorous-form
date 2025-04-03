@@ -49,11 +49,8 @@ body {
 }
 
 .Header .STitle {
-    width: 38%;
-    min-width: 440px;
     font-family: "STitle";
     font-size: clamp(0.912rem, 0.83vw, 0.912rem);
-    line-height: 130%;
 }
 
 
@@ -260,12 +257,7 @@ h2 {
     animation: fadeIn 0.5s ease-out forwards;
 }
 
-@media (max-width: 768px) {
-    .Header .STitle {
-        min-width: 340px;
-        font-size: 11px;
-    }
-}
+@media (max-width: 768px) {}
 
 /* Alert */
 .error-message {
