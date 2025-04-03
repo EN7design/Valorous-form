@@ -46,6 +46,11 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                                 document.getElementById('type-mentor-autre').value
                     }
                 },
+                "EuMentor": {
+                    "select": {
+                        "name": document.querySelector('input[name="EuMentor"]:checked')?.value
+                    }
+                },
                 "Qualités": {
                     "rich_text": [
                         {
