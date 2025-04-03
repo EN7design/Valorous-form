@@ -81,6 +81,11 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                                 document.getElementById('frequence-autre').value
                     }
                 },
+                "DéfisExercices": {
+                    "select": {
+                        "name": document.querySelector('input[name="DéfisExercices"]:checked')?.value
+                    }
+                },
                 "Activités préférées": {
                     "select": {
                         "name": document.querySelector('input[name="activites"]:checked')?.value || 
