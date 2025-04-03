@@ -129,6 +129,15 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                         }
                     ]
                 },
+                "Echec": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": document.querySelector('textarea[name="Echec"]').value
+                            }
+                        }
+                    ]
+                },
                 "Profession": {
                     "select": {
                         "name": document.querySelector('input[name="profession"]:checked').value
