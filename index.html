@@ -13,7 +13,10 @@
     <div class="Header">
         <img src="Logo.svg" alt="Logo Valorous">
         <p class="Title">Nous sommes heureux de vous voir ici !</p>
-        <p class="STitle"> Veuillez bien répondre à toutes les questions.</p>
+        <p class="STitle">Ce questionnaire aide à identifier les mentors et mentorés
+            et à comprendre les besoins de chacun au sein du groupe 'Valorous'.
+            <br>Merci de le remplir honnêtement<br>Pasteur Kanda
+        </p>
     </div>
     <!-- le modale -->
     <div id="customModal" class="modal">
@@ -25,7 +28,7 @@
     </div>
     <!-- Le formulaire -->
     <div class="container">
-        <form id="questionnaireForm" method="POST" >
+        <form id="questionnaireForm" method="POST">
             <!-- Progress bar -->
             <div class="progress-bar">
                 <div class="progress" id="progress"></div>
@@ -101,7 +104,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Leçon">Si oui, quelles leçons avez-vous retenues de cette expérience?<br>(Veuillez partager vos réflexions.)</label>
+                    <label for="Leçon">Si oui, quelles leçons avez-vous retenues de cette expérience?<br>(Veuillez
+                        partager vos réflexions.)</label>
                     <textarea id="Leçon" name="Leçon" rows="2"></textarea>
                 </div>
 
@@ -115,7 +119,8 @@
             <div class="form-step" data-step="3">
                 <h2>Qualités et relations dans le mentorat</h2>
                 <div class="form-group">
-                    <label for="qualites">Quelles qualités pensez-vous qu'un bon mentor doit avoir ?<br>(Veuillez lister au moins trois qualités.)</label>
+                    <label for="qualites">Quelles qualités pensez-vous qu'un bon mentor doit avoir ?<br>(Veuillez lister
+                        au moins trois qualités.)</label>
                     <textarea id="qualites" name="qualites" rows="2" required></textarea>
                     <div id="error-qualites" class="error-message"></div>
                 </div>
@@ -185,11 +190,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="SujetsThemes">Quels sujets ou thèmes aimeriez-vous aborder au cours des réunions ?<br>(Indiquez vos sujets d'intérêt.)</label>
-                    <textarea id="SujetsThemes" name="SujetsThemes" rows="2"></textarea>
-                </div>
-
-                <div class="form-group">
                     <label>Êtes-vous à l'aise pour partager vos expériences et vos défis avec un groupe ?</label>
                     <div class="radio-group">
                         <label><input type="radio" name="PartageExpeDefis" value="Oui">Oui</label>
@@ -197,6 +197,24 @@
                         <label><input type="radio" name="PartageExpeDefis" value="Peut-être">Peut-être</label>
                     </div>
                     <div id="error-PartageExpeDefis" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Seriez-vous prêt à devenir un mentor dans le futur si cela vous était proposé ?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="DevenirMentor" value="Oui">Oui</label>
+                        <label><input type="radio" name="DevenirMentor" value="Non">Non</label>
+                        <label><input type="radio" name="DevenirMentor"
+                                value="Peut-être besoin de plus d'informations">Peut-être,besoin de plus
+                            d'informations.</label>
+                    </div>
+                    <div id="error-DevenirMentor" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="SujetsThemes">Quels sujets ou thèmes aimeriez-vous aborder au cours des réunions
+                        ?<br>(Indiquez vos sujets d'intérêt.)</label>
+                    <textarea id="SujetsThemes" name="SujetsThemes" rows="2"></textarea>
                 </div>
 
                 <div class="btn-group">
@@ -209,17 +227,20 @@
             <div class="form-step" data-step="5">
                 <h2>Questions personnelles et aspirations</h2>
                 <div class="form-group">
-                    <label for="mentor-inspirant">Citez un mentor influent et impactant qui vous inspire ainsi qu’une de ces citations ?</label>
+                    <label for="mentor-inspirant">Citez un mentor influent et impactant qui vous inspire ainsi qu’une de
+                        ces citations ?</label>
                     <textarea id="mentor-inspirant" name="mentor-inspirant" rows="3" required></textarea>
                     <div id="error-mentor-inspirant" class="error-message"></div>
                 </div>
 
                 <div class="form-group">
-                    <label>Sur une échelle de 1 à 5, à quel point êtes-vous engagé dans votre développement en tant qu’homme ?</label>
+                    <label>Sur une échelle de 1 à 5, à quel point êtes-vous engagé dans votre développement en tant
+                        qu’homme ?</label>
                     <div class="radio-group">
                         <label><input type="radio" name="NiveauEngagement" value="1-Pas du tout">1-Pas du tout</label>
                         <label><input type="radio" name="NiveauEngagement" value="2-Peu engagé">2-Peu engagé</label>
-                        <label><input type="radio" name="NiveauEngagement" value="3-Moyennement engagé">3-Moyennement engagé</label>
+                        <label><input type="radio" name="NiveauEngagement" value="3-Moyennement engagé">3-Moyennement
+                            engagé</label>
                         <label><input type="radio" name="NiveauEngagement" value="4-Engagé">4-Engagé</label>
                         <label><input type="radio" name="NiveauEngagement" value="5-Très engagé">5-Très engagé</label>
                     </div>
@@ -272,6 +293,13 @@
                     <label for="Projection">Comment vous voyez-vous dans 10 ans ?</label>
                     <textarea id="Projection" name="Projection" rows="2"></textarea>
                     <div id="error-Projection" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Suggestions">Avez-vous des suggestions ou des idées pour le développement du groupe
+                        "Valorous" ?<br>(Veuillez partager vos idées)</label>
+                    <textarea id="Suggestions" name="Suggestions" rows="2"></textarea>
+                    <div id="error-Suggestions" class="error-message"></div>
                 </div>
 
                 <div class="btn-group">

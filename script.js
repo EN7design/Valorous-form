@@ -106,6 +106,11 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                         "name": document.querySelector('input[name="PartageExpeDefis"]:checked')?.value
                     }
                 },
+                "DevenirMentor": {
+                    "select": {
+                        "name": document.querySelector('input[name="DevenirMentor"]:checked')?.value
+                    }
+                },
                 "Mentor inspirant": {
                     "rich_text": [
                         {
@@ -162,6 +167,15 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                         {
                             "text": {
                                 "content": document.querySelector('textarea[name="Projection"]').value
+                            }
+                        }
+                    ]
+                },
+                "Suggestions": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": document.querySelector('textarea[name="Suggestions"]').value
                             }
                         }
                     ]
