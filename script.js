@@ -106,6 +106,11 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                         "name": document.querySelector('input[name="PartageExpeDefis"]:checked')?.value
                     }
                 },
+                "Devenir mentor": {
+                    "select": {
+                        "name": document.querySelector('input[name="devenirMentor"]:checked')?.value
+                    }
+                },
                 "Mentor inspirant": {
                     "rich_text": [
                         {
