@@ -129,6 +129,15 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                         }
                     ]
                 },
+                "Plus grande Echec": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": document.querySelector('textarea[name="echec"]').value
+                            }
+                        }
+                    ]
+                },
                 "Profession": {
                     "select": {
                         "name": document.querySelector('input[name="profession"]:checked').value
