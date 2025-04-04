@@ -156,6 +156,15 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                         }
                     ]
                 },
+                "Suggestions": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": document.querySelector('textarea[name="suggestions"]').value
+                            }
+                        }
+                    ]
+                },
                 "Profession": {
                     "select": {
                         "name": document.querySelector('input[name="profession"]:checked').value
