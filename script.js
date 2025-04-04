@@ -147,6 +147,15 @@ document.getElementById('questionnaireForm').addEventListener('submit', function
                         }
                     ]
                 },
+                "Vous dans 10 ans": {
+                    "rich_text": [
+                        {
+                            "text": {
+                                "content": document.querySelector('textarea[name="projection"]').value
+                            }
+                        }
+                    ]
+                },
                 "Profession": {
                     "select": {
                         "name": document.querySelector('input[name="profession"]:checked').value
